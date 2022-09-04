@@ -12,7 +12,6 @@
 		47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */; };
 		47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C5D28C4C75E004AD987 /* Assets.xcassets */; };
 		47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */; };
-		47CE3C6B28C4C75F004AD987 /* HeartBeatLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C6A28C4C75F004AD987 /* HeartBeatLiveTests.swift */; };
 		47CE3C7528C4C75F004AD987 /* HeartBeatLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */; };
 		47CE3C7728C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */; };
 		47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C8728C4C9F7004AD987 /* CustomColors.swift */; };
@@ -24,6 +23,8 @@
 		47CE3CA128C4DFDA004AD987 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA028C4DFDA004AD987 /* API.swift */; };
 		47CE3CA728C4E4A4004AD987 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA628C4E4A4004AD987 /* Config.swift */; };
 		47CE3CA928C4EA4B004AD987 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3CA828C4EA4B004AD987 /* README.md */; };
+		47CE3CAC28C4EB0C004AD987 /* ConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */; };
+		47CE3CAF28C4EC60004AD987 /* ApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CAE28C4EC60004AD987 /* ApiClientTest.swift */; };
 		AB1B50C65D4745589CF01CBD /* Pods_HeartBeatLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF433BFD1FD268D3DD3A2013 /* Pods_HeartBeatLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +54,6 @@
 		47CE3C5D28C4C75E004AD987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47CE3C6628C4C75F004AD987 /* HeartBeatLiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeatLiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		47CE3C6A28C4C75F004AD987 /* HeartBeatLiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveTests.swift; sourceTree = "<group>"; };
 		47CE3C7028C4C75F004AD987 /* HeartBeatLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeatLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITests.swift; sourceTree = "<group>"; };
 		47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		47CE3CA528C4E455004AD987 /* Config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.release.xcconfig; sourceTree = "<group>"; };
 		47CE3CA628C4E4A4004AD987 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		47CE3CA828C4EA4B004AD987 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTest.swift; sourceTree = "<group>"; };
+		47CE3CAE28C4EC60004AD987 /* ApiClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTest.swift; sourceTree = "<group>"; };
 		601148F32DB27D49C7B39867 /* Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8615BE3429C00E6BE9D01E53 /* Pods-HeartBeatLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B399354068AEA66D1A06055B /* Pods-HeartBeatLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +158,8 @@
 		47CE3C6928C4C75F004AD987 /* HeartBeatLiveTests */ = {
 			isa = PBXGroup;
 			children = (
-				47CE3C6A28C4C75F004AD987 /* HeartBeatLiveTests.swift */,
+				47CE3CAD28C4EC52004AD987 /* API */,
+				47CE3CAA28C4EAF9004AD987 /* Utils */,
 			);
 			path = HeartBeatLiveTests;
 			sourceTree = "<group>";
@@ -210,6 +213,22 @@
 			children = (
 				47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */,
 				47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		47CE3CAA28C4EAF9004AD987 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		47CE3CAD28C4EC52004AD987 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3CAE28C4EC60004AD987 /* ApiClientTest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -530,7 +549,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47CE3C6B28C4C75F004AD987 /* HeartBeatLiveTests.swift in Sources */,
+				47CE3CAC28C4EB0C004AD987 /* ConfigTest.swift in Sources */,
+				47CE3CAF28C4EC60004AD987 /* ApiClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

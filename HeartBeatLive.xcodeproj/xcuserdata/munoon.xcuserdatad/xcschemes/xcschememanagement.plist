@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>HeartBeatLiveTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>47CE3C5528C4C75B004AD987</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47CE3C6528C4C75F004AD987</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47CE3C6F28C4C75F004AD987</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
