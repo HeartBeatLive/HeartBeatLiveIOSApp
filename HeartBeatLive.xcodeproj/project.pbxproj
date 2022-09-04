@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */; };
-		47CE3C5C28C4C75B004AD987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C5B28C4C75B004AD987 /* ContentView.swift */; };
 		47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C5D28C4C75E004AD987 /* Assets.xcassets */; };
 		47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */; };
 		47CE3C6B28C4C75F004AD987 /* HeartBeatLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C6A28C4C75F004AD987 /* HeartBeatLiveTests.swift */; };
 		47CE3C7528C4C75F004AD987 /* HeartBeatLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */; };
 		47CE3C7728C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */; };
+		47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C8728C4C9F7004AD987 /* CustomColors.swift */; };
+		47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9028C4CD4E004AD987 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		47CE3C5628C4C75B004AD987 /* HeartBeatLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeatLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveApp.swift; sourceTree = "<group>"; };
-		47CE3C5B28C4C75B004AD987 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47CE3C5D28C4C75E004AD987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47CE3C6628C4C75F004AD987 /* HeartBeatLiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeatLiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		47CE3C7028C4C75F004AD987 /* HeartBeatLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeatLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITests.swift; sourceTree = "<group>"; };
 		47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47CE3C8728C4C9F7004AD987 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		47CE3C9028C4CD4E004AD987 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */,
-				47CE3C5B28C4C75B004AD987 /* ContentView.swift */,
-				47CE3C5D28C4C75E004AD987 /* Assets.xcassets */,
+				47CE3C8F28C4CD16004AD987 /* View */,
+				47CE3C8D28C4CCFD004AD987 /* Utils */,
+				47CE3C8E28C4CD09004AD987 /* Assets */,
 				47CE3C5F28C4C75E004AD987 /* Preview Content */,
 			);
 			path = HeartBeatLive;
@@ -125,6 +128,30 @@
 				47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */,
 			);
 			path = HeartBeatLiveUITests;
+			sourceTree = "<group>";
+		};
+		47CE3C8D28C4CCFD004AD987 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3C8728C4C9F7004AD987 /* CustomColors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		47CE3C8E28C4CD09004AD987 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3C5D28C4C75E004AD987 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		47CE3C8F28C4CD16004AD987 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3C9028C4CD4E004AD987 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47CE3C5C28C4C75B004AD987 /* ContentView.swift in Sources */,
+				47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */,
 				47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */,
+				47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
