@@ -23,6 +23,7 @@
 		47CE3C9F28C4DDB4004AD987 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */; };
 		47CE3CA128C4DFDA004AD987 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA028C4DFDA004AD987 /* API.swift */; };
 		47CE3CA728C4E4A4004AD987 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA628C4E4A4004AD987 /* Config.swift */; };
+		47CE3CA928C4EA4B004AD987 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3CA828C4EA4B004AD987 /* README.md */; };
 		AB1B50C65D4745589CF01CBD /* Pods_HeartBeatLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF433BFD1FD268D3DD3A2013 /* Pods_HeartBeatLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		47CE3CA428C4E2A4004AD987 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.debug.xcconfig; sourceTree = "<group>"; };
 		47CE3CA528C4E455004AD987 /* Config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.release.xcconfig; sourceTree = "<group>"; };
 		47CE3CA628C4E4A4004AD987 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		47CE3CA828C4EA4B004AD987 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		601148F32DB27D49C7B39867 /* Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8615BE3429C00E6BE9D01E53 /* Pods-HeartBeatLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B399354068AEA66D1A06055B /* Pods-HeartBeatLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		47CE3C4D28C4C75B004AD987 = {
 			isa = PBXGroup;
 			children = (
+				47CE3CA828C4EA4B004AD987 /* README.md */,
 				47CE3CA528C4E455004AD987 /* Config.release.xcconfig */,
 				47CE3CA428C4E2A4004AD987 /* Config.debug.xcconfig */,
 				47CE3C5828C4C75B004AD987 /* HeartBeatLive */,
@@ -347,6 +350,7 @@
 			files = (
 				47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */,
 				47CE3C9C28C4DC40004AD987 /* CheckEmailReserved.graphql in Resources */,
+				47CE3CA928C4EA4B004AD987 /* README.md in Resources */,
 				47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */,
 				47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */,
 			);
