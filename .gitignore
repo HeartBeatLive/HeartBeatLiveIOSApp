@@ -24,3 +24,6 @@ Pods
 # Apollo
 HeartBeatLive/API.swift
 HeartBeatLive/schema.json
+
+# Firebase
+HeartBeatLive/GoogleService-Info.plist
