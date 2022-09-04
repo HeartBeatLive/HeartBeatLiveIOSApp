@@ -20,3 +20,7 @@ DerivedData
 Podfile.lock
 Pods
 *.xcworkspace
+
+# Apollo
+HeartBeatLive/API.swift
+HeartBeatLive/schema.json

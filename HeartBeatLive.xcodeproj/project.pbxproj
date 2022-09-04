@@ -19,6 +19,10 @@
 		47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9028C4CD4E004AD987 /* ContentView.swift */; };
 		47CE3C9728C4D314004AD987 /* HeartRateAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9628C4D314004AD987 /* HeartRateAnimation.swift */; };
 		47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C9828C4D6F0004AD987 /* HeartRateAnimation.json */; };
+		47CE3C9C28C4DC40004AD987 /* CheckEmailReserved.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */; };
+		47CE3C9F28C4DDB4004AD987 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */; };
+		47CE3CA128C4DFDA004AD987 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA028C4DFDA004AD987 /* API.swift */; };
+		47CE3CA728C4E4A4004AD987 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CA628C4E4A4004AD987 /* Config.swift */; };
 		AB1B50C65D4745589CF01CBD /* Pods_HeartBeatLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF433BFD1FD268D3DD3A2013 /* Pods_HeartBeatLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,12 @@
 		47CE3C9328C4D082004AD987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47CE3C9628C4D314004AD987 /* HeartRateAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAnimation.swift; sourceTree = "<group>"; };
 		47CE3C9828C4D6F0004AD987 /* HeartRateAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeartRateAnimation.json; sourceTree = "<group>"; };
+		47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CheckEmailReserved.graphql; sourceTree = "<group>"; };
+		47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		47CE3CA028C4DFDA004AD987 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		47CE3CA428C4E2A4004AD987 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.debug.xcconfig; sourceTree = "<group>"; };
+		47CE3CA528C4E455004AD987 /* Config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.release.xcconfig; sourceTree = "<group>"; };
+		47CE3CA628C4E4A4004AD987 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		601148F32DB27D49C7B39867 /* Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8615BE3429C00E6BE9D01E53 /* Pods-HeartBeatLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B399354068AEA66D1A06055B /* Pods-HeartBeatLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +106,8 @@
 		47CE3C4D28C4C75B004AD987 = {
 			isa = PBXGroup;
 			children = (
+				47CE3CA528C4E455004AD987 /* Config.release.xcconfig */,
+				47CE3CA428C4E2A4004AD987 /* Config.debug.xcconfig */,
 				47CE3C5828C4C75B004AD987 /* HeartBeatLive */,
 				47CE3C6928C4C75F004AD987 /* HeartBeatLiveTests */,
 				47CE3C7328C4C75F004AD987 /* HeartBeatLiveUITests */,
@@ -120,10 +132,12 @@
 			children = (
 				47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */,
 				47CE3C8F28C4CD16004AD987 /* View */,
+				47CE3C9D28C4DDA2004AD987 /* API */,
 				47CE3C8D28C4CCFD004AD987 /* Utils */,
 				47CE3C8E28C4CD09004AD987 /* Assets */,
 				47CE3C5F28C4C75E004AD987 /* Preview Content */,
 				47CE3C9328C4D082004AD987 /* Info.plist */,
+				47CE3CA028C4DFDA004AD987 /* API.swift */,
 			);
 			path = HeartBeatLive;
 			sourceTree = "<group>";
@@ -157,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				47CE3C8728C4C9F7004AD987 /* CustomColors.swift */,
+				47CE3CA628C4E4A4004AD987 /* Config.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,6 +200,15 @@
 				47CE3C9628C4D314004AD987 /* HeartRateAnimation.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		47CE3C9D28C4DDA2004AD987 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */,
+				47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		B1066E6302C4BBDD8342B421 /* Frameworks */ = {
@@ -219,6 +243,7 @@
 			buildPhases = (
 				103F992A7E5EE8329E6CA4F5 /* [CP] Check Pods Manifest.lock */,
 				47CE3C9228C4CEAB004AD987 /* Swift Lint */,
+				47CE3C9A28C4D859004AD987 /* Build GraphQL client */,
 				47CE3C5228C4C75B004AD987 /* Sources */,
 				47CE3C5328C4C75B004AD987 /* Frameworks */,
 				47CE3C5428C4C75B004AD987 /* Resources */,
@@ -321,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */,
+				47CE3C9C28C4DC40004AD987 /* CheckEmailReserved.graphql in Resources */,
 				47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */,
 				47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */,
 			);
@@ -439,6 +465,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" > /dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, run 'pod install' to install all required dependencies including SwiftLint.\"\nfi\n";
 		};
+		47CE3C9A28C4D859004AD987 /* Build GraphQL client */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build GraphQL client";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\nSERVER_ENDPOINT=\"${SERVER_SCHEME}://${SERVER_HOST}/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=$SERVER_ENDPOINT schema.json\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
 		E5E8D766D3460601B50B3E6E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,7 +515,10 @@
 				47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */,
 				47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */,
 				47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */,
+				47CE3CA728C4E4A4004AD987 /* Config.swift in Sources */,
 				47CE3C9728C4D314004AD987 /* HeartRateAnimation.swift in Sources */,
+				47CE3CA128C4DFDA004AD987 /* API.swift in Sources */,
+				47CE3C9F28C4DDB4004AD987 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -612,7 +659,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -624,7 +671,7 @@
 		};
 		47CE3C7B28C4C75F004AD987 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 324AA201F0B907174DB8D615 /* Pods-HeartBeatLive.debug.xcconfig */;
+			baseConfigurationReference = 47CE3CA428C4E2A4004AD987 /* Config.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,7 +690,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +706,7 @@
 		};
 		47CE3C7C28C4C75F004AD987 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B399354068AEA66D1A06055B /* Pods-HeartBeatLive.release.xcconfig */;
+			baseConfigurationReference = 47CE3CA528C4E455004AD987 /* Config.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -678,7 +725,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,14 @@
+//
+//  Config.xcconfig
+//  HeartBeatLive
+//
+//  Created by Nikita Ivchenko on 04.09.2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.debug.xcconfig"
+
+SERVER_SCHEME = http
+SERVER_HOST = localhost:8080

@@ -1,0 +1,3 @@
+query CheckEmailReserved($email: String!) {
+    checkEmailReserved(email: $email)
+}

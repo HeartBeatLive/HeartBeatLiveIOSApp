@@ -1,2 +1,3 @@
 excluded:
   - ${PWD}/Pods
+  - HeartBeatLive/API.swift
