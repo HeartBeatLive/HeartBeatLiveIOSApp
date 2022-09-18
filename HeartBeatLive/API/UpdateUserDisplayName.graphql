@@ -1,0 +1,10 @@
+mutation UpdateUserDisplayName($newDisplayName: String!) {
+    updateProfileDisplayName(displayName: $newDisplayName) {
+        id,
+        displayName,
+        email,
+        emailVerified,
+        roles,
+        heartRateOnlineStatus
+    }
+}

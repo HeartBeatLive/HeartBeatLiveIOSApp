@@ -12,7 +12,7 @@ import Apollo
 
 // MARK: Login View
 struct LoginView: View {
-    @StateObject private var authenticationManager = AuthenticationManager.shared
+    @StateObject private var authenticationManager = AuthenticationManager()
 
     var body: some View {
         NavigationView {
@@ -21,6 +21,7 @@ struct LoginView: View {
 
                 formView
                     .padding()
+                    .environmentObject(authenticationManager)
             }
             .background(Color.primaryBackgroundColor)
             .navigationBarTitleDisplayMode(.inline)
@@ -64,11 +65,8 @@ private enum LoginState {
 }
 
 private class AuthenticationManager: ObservableObject {
-    public static let shared = AuthenticationManager()
     @Published var state = LoginState.emailPrompt
     @Published var reverseAnimation = false
-
-    private init() {}
 
     func update(state: LoginState) {
         withAnimation {
@@ -80,6 +78,7 @@ private class AuthenticationManager: ObservableObject {
 // MARK: Email Form
 private struct EmailFormLoginView: View {
     private static let emailPredicate = NSPredicate(format: "SELF MATCHES %@", "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")
+    @EnvironmentObject private var authenticationManager: AuthenticationManager
     @State private var email = ""
     @State private var loading = false
     @State private var errorMessage = ""
@@ -129,9 +128,9 @@ private struct EmailFormLoginView: View {
                         }
 
                         if emailReserved {
-                            AuthenticationManager.shared.update(state: .passwordPrompt(email: email))
+                            authenticationManager.update(state: .passwordPrompt(email: email))
                         } else {
-                            AuthenticationManager.shared.update(state: .registrationPrompt(email: email))
+                            authenticationManager.update(state: .registrationPrompt(email: email))
                         }
                         loading = false
                     case .failure:
@@ -147,6 +146,7 @@ private struct EmailFormLoginView: View {
 // MARK: Password Form
 private struct PasswordFormLoginView: View {
     let email: String
+    @EnvironmentObject private var authenticationManager: AuthenticationManager
     @State private var password = ""
     @State private var errorMessage = ""
     @State private var loading = false
@@ -159,7 +159,7 @@ private struct PasswordFormLoginView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
 
                 Button {
-                    AuthenticationManager.shared.update(state: .passwordRecoveryPrompt(email: email))
+                    authenticationManager.update(state: .passwordRecoveryPrompt(email: email))
                 } label: {
                     Text("Forgot?")
                         .foregroundColor(.white)
@@ -216,9 +216,98 @@ private struct PasswordFormLoginView: View {
 // MARK: Registration Form
 private struct RegistrationFormLoginView: View {
     let email: String
+    @State private var displayName = ""
+    @State private var password = ""
+    @State private var passwordConfirm = ""
+    @State private var loading = false
+    @State private var errorFields: [Field] = []
+    @State private var errorMessage = ""
 
     var body: some View {
-        FormGoBackButton(blocked: false)
+        VStack {
+            FormErrorMessage(errorMessage: errorMessage)
+            
+            FormField(placeholder: "You name", value: $displayName,
+                      loading: loading,
+                      showError: errorFields.contains(Field.displayName),
+                      keyboardType: .default, textContentType: .name,
+                      autocapitalization: .words, disableAutocorrection: false)
+            
+            PasswordFormField(placeholder: "Your password", value: $password,
+                              loading: loading, showError: errorFields.contains(Field.password),
+                              textContentType: .newPassword)
+            
+            PasswordFormField(placeholder: "Confirm your password", value: $passwordConfirm,
+                              loading: loading, showError: errorFields.contains(Field.passwordConfirm),
+                              textContentType: .newPassword)
+            
+            FormButton(text: "Register", loading: loading, blocked: loading) {
+                guard displayName.count > 2 else {
+                    errorMessage = "Your name is too small."
+                    errorFields = [Field.displayName]
+                    return
+                }
+                
+                guard password.count >= 8 else {
+                    errorMessage = "Your password is too small."
+                    errorFields = [Field.password]
+                    return
+                }
+                
+                guard password == passwordConfirm else {
+                    errorMessage = "Your passwords do not match."
+                    errorFields = [Field.password, Field.passwordConfirm]
+                    return
+                }
+                
+                loading = true
+                errorMessage = ""
+                errorFields = []
+                
+                Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                    loading = false
+                    
+                    guard error == nil else {
+                        errorMessage = "Unknown error happened while trying to register new account. " +
+                            "Please, check you internet connection."
+                        return
+                    }
+                    
+                    Task {
+                        setUserDisplayName(tryNumber: 0)
+                    }
+                }
+            }
+            
+            FormGoBackButton(blocked: loading)
+        }
+    }
+    
+    private enum Field {
+        case displayName, password, passwordConfirm
+    }
+    
+    private func setUserDisplayName(tryNumber: Int) {
+        if tryNumber > 10 {
+            return
+        }
+        
+        ApiClient.shared.perform(mutation: UpdateUserDisplayNameMutation(newDisplayName: displayName)) { result in
+            switch result {
+            case .success(let data):
+                if data.findErrorWith(path: "updateProfileDisplayName") != nil {
+                    Task {
+                        try await Task.sleep(nanoseconds: 3 * 1_000_000_000)
+                        setUserDisplayName(tryNumber: tryNumber + 1)
+                    }
+                }
+            case .failure:
+                Task {
+                    try await Task.sleep(nanoseconds: 3 * 1_000_000_000)
+                    setUserDisplayName(tryNumber: tryNumber + 1)
+                }
+            }
+        }
     }
 }
 
@@ -321,7 +410,6 @@ private struct FormField: View {
     var textContentType: UITextContentType = .name
     var autocapitalization: UITextAutocapitalizationType = .none
     var disableAutocorrection = true
-    var isSecure = false
 
     var body: some View {
         TextField(placeholder, text: $value)
@@ -428,11 +516,12 @@ private struct FormButton: View {
 
 // MARK: Form Go Back Button
 private struct FormGoBackButton: View {
+    @EnvironmentObject private var authenticationManager: AuthenticationManager
     let blocked: Bool
 
     var body: some View {
         FormButton(text: "Go Back", direction: .rightToLeft, blocked: blocked) {
-            AuthenticationManager.shared.update(state: .emailPrompt)
+            authenticationManager.update(state: .emailPrompt)
         }
     }
 }

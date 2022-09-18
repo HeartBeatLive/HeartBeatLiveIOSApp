@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1AA325491C038ABCB33C72F8 /* Pods_HeartBeatLive_HeartBeatLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97CA998558490D9602327D5 /* Pods_HeartBeatLive_HeartBeatLiveUITests.framework */; };
 		44A1AE54F43BE9E6B0A5E73E /* Pods_HeartBeatLiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4684A1BFB4397599B47FBF /* Pods_HeartBeatLiveTests.framework */; };
+		47847D0A28C955A300129600 /* UpdateUserDisplayName.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */; };
 		47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */; };
 		47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C5D28C4C75E004AD987 /* Assets.xcassets */; };
 		47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		21B36427797905C480AB2537 /* Pods-HeartBeatLiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		23578360FBA27B978E40A3DF /* Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		324AA201F0B907174DB8D615 /* Pods-HeartBeatLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.debug.xcconfig"; sourceTree = "<group>"; };
+		47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateUserDisplayName.graphql; sourceTree = "<group>"; };
 		47CE3C5628C4C75B004AD987 /* HeartBeatLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeatLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveApp.swift; sourceTree = "<group>"; };
 		47CE3C5D28C4C75E004AD987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */,
 				47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */,
 				47F8D73B28C6238000776330 /* SendResetPasswordEmail.graphql */,
+				47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */,
 				47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */,
 				47CE3CB128C51292004AD987 /* GoogleService-Info.plist in Resources */,
+				47847D0A28C955A300129600 /* UpdateUserDisplayName.graphql in Resources */,
 				47F8D73C28C6238000776330 /* SendResetPasswordEmail.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
