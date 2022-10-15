@@ -117,7 +117,7 @@ private struct EmailFormLoginView: View {
 
                 guard newErrorMessage.isEmpty else { return }
 
-                ApiClient.shared.fetch(query: CheckEmailReservedQuery(email: email)) { result in
+                ApiClient.shared.fetch(query: CheckEmailReservedQuery(email: email), cachePolicy: .fetchIgnoringCacheCompletely) { result in
                     loading = false
 
                     switch result {
