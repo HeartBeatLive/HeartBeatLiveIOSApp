@@ -9,6 +9,8 @@
 import SwiftUI
 import FirebaseAuth
 import Apollo
+import AuthenticationServices
+import CryptoKit
 
 // MARK: Login View
 struct LoginView: View {
@@ -117,7 +119,10 @@ private struct EmailFormLoginView: View {
 
                 guard newErrorMessage.isEmpty else { return }
 
-                ApiClient.shared.fetch(query: CheckEmailReservedQuery(email: email), cachePolicy: .fetchIgnoringCacheCompletely) { result in
+                ApiClient.shared.fetch(
+                    query: CheckEmailReservedQuery(email: email),
+                    cachePolicy: .fetchIgnoringCacheCompletely
+                ) { result in
                     loading = false
 
                     switch result {
@@ -139,7 +144,108 @@ private struct EmailFormLoginView: View {
                     }
                 }
             }
+            
+            AppleAuthenticationLoginView(loading: $loading, errorMessage: $errorMessage)
         }
+    }
+}
+
+// MARK: Apple Authentication
+private struct AppleAuthenticationLoginView: View {
+    @Binding var loading: Bool
+    @Binding var errorMessage: String
+    @State private var nonce: String?
+    
+    var body: some View {
+        SignInWithAppleButton(
+            onRequest: { request in
+                request.requestedScopes = [.fullName, .email]
+                
+                let nonce = AppleAuthenticationLoginView.randomNonceString()
+                self.nonce = nonce
+                request.nonce = SHA256.hash(data: Data(nonce.utf8))
+                    .compactMap { String(format: "%02x", $0) }
+                    .joined()
+            },
+            onCompletion: handleAppleIdAuthentication
+        )
+        .frame(height: 50)
+        .cornerRadius(3.0)
+    }
+    
+    private func handleAppleIdAuthentication(result: Result<ASAuthorization, Error>) {
+        switch result {
+        case .success(let authorization):
+            guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else {
+                errorMessage = "An error happened while trying to authenticate."
+                return
+            }
+            
+            guard let identityToken = credentials.identityToken else {
+                print("Apple ID identity token is not present!")
+                errorMessage = "An error happened while trying to authenticate."
+                return
+            }
+            
+            guard let idTokenString = String(data: identityToken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(identityToken.debugDescription)")
+                errorMessage = "An error happened while trying to authenticate."
+                return
+            }
+            
+            let firCredentials = OAuthProvider.credential(
+                withProviderID: "apple.com",
+                idToken: idTokenString,
+                rawNonce: nonce
+            )
+            
+            loading = true
+            Auth.auth().signIn(with: firCredentials) { _, error in
+                loading = false
+                
+                if let error = error {
+                    print("Error authenticating to firebase account: \(error.localizedDescription)")
+                    errorMessage = "An error happened while trying to authenticate."
+                    return
+                }
+            }
+            
+        case .failure(let error):
+            if let authError = error as? ASAuthorizationError {
+                guard authError.code != .canceled else { return }
+            }
+            
+            print("Error authenticating using Apple ID: \(error.localizedDescription)")
+            errorMessage = "An error happened while trying to authenticate."
+        }
+    }
+    
+    private static func randomNonceString(length: Int = 32) -> String {
+        let charset: [Character] = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remainingLength = length
+
+        while remainingLength > 0 {
+            let randoms: [UInt8] = (0 ..< 16).map { _ in
+                var random: UInt8 = 0
+                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+                guard errorCode == errSecSuccess else {
+                    fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+                }
+                return random
+            }
+
+            randoms.forEach { random in
+                guard remainingLength != 0 else { return }
+
+                if random < charset.count {
+                    result.append(charset[Int(random)])
+                    remainingLength -= 1
+                }
+            }
+        }
+
+        return result
     }
 }
 
