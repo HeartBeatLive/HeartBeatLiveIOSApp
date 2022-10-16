@@ -22,6 +22,7 @@ struct LoginView: View {
                 HeartRateAnimation()
 
                 formView
+                    .slideAnimation(reversed: authenticationManager.reverseAnimation)
                     .padding()
                     .environmentObject(authenticationManager)
             }
@@ -40,21 +41,10 @@ struct LoginView: View {
 
     @ViewBuilder private var formView: some View {
         switch authenticationManager.state {
-        case .emailPrompt:
-            EmailFormLoginView()
-                .transition(.slideOut)
-
-        case .passwordPrompt(let email):
-            PasswordFormLoginView(email: email)
-                .transition(.slideIn)
-
-        case .registrationPrompt(let email):
-            RegistrationFormLoginView(email: email)
-                .transition(.slideIn)
-
-        case .passwordRecoveryPrompt(let email):
-            ForgotPasswordFormLoginView(email: email)
-                .transition(.slideIn)
+        case .emailPrompt: EmailFormLoginView()
+        case .passwordPrompt(let email): PasswordFormLoginView(email: email)
+        case .registrationPrompt(let email): RegistrationFormLoginView(email: email)
+        case .passwordRecoveryPrompt(let email): ForgotPasswordFormLoginView(email: email)
         }
     }
 }
@@ -70,10 +60,16 @@ private class AuthenticationManager: ObservableObject {
     @Published var state = LoginState.emailPrompt
     @Published var reverseAnimation = false
 
-    func update(state: LoginState) {
+    func goTo(state: LoginState) {
         withAnimation {
             self.state = state
         }
+    }
+    
+    func backTo(state: LoginState) {
+        self.reverseAnimation = true
+        goTo(state: state)
+        self.reverseAnimation = false
     }
 }
 
@@ -133,9 +129,9 @@ private struct EmailFormLoginView: View {
                         }
 
                         if emailReserved {
-                            authenticationManager.update(state: .passwordPrompt(email: email))
+                            authenticationManager.goTo(state: .passwordPrompt(email: email))
                         } else {
-                            authenticationManager.update(state: .registrationPrompt(email: email))
+                            authenticationManager.goTo(state: .registrationPrompt(email: email))
                         }
                         loading = false
                     case .failure:
@@ -265,7 +261,7 @@ private struct PasswordFormLoginView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
 
                 Button {
-                    authenticationManager.update(state: .passwordRecoveryPrompt(email: email))
+                    authenticationManager.goTo(state: .passwordRecoveryPrompt(email: email))
                 } label: {
                     Text("Forgot?")
                         .foregroundColor(.white)
@@ -421,6 +417,7 @@ private struct RegistrationFormLoginView: View {
 private struct ForgotPasswordFormLoginView: View {
     let email: String
     @State private var status: SendStatus?
+    @EnvironmentObject private var authenticationManager: AuthenticationManager
 
     var body: some View {
         if let status = status {
@@ -436,7 +433,7 @@ private struct ForgotPasswordFormLoginView: View {
 
                 FormGoBackButton(blocked: false)
             }
-            .transition(.slideIn)
+            .slideAnimation(reversed: authenticationManager.reverseAnimation)
         } else {
             ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white))
                 .transition(.slideIn)
@@ -627,7 +624,7 @@ private struct FormGoBackButton: View {
 
     var body: some View {
         FormButton(text: "Go Back", direction: .rightToLeft, blocked: blocked) {
-            authenticationManager.update(state: .emailPrompt)
+            authenticationManager.backTo(state: .emailPrompt)
         }
     }
 }

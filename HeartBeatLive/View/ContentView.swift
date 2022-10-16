@@ -9,33 +9,36 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
-    @State private var userAuthenticated = Auth.auth().currentUser != nil
+    @State private var user = Auth.auth().currentUser
+    @State private var reverseAnimation = false
 
     var body: some View {
         mainView
             .onAppear {
                 Auth.auth().addStateDidChangeListener { _, user in
+                    reverseAnimation = user == nil
                     withAnimation {
-                        userAuthenticated = user != nil
+                        self.user = user
                     }
+                    reverseAnimation = false
                 }
             }
     }
 
     @ViewBuilder private var mainView: some View {
-        if userAuthenticated {
+        if let user = self.user {
             VStack {
-                Text("Hello, \(Auth.auth().currentUser!.uid)")
+                Text("Hello, \(user.uid)")
                 Button {
                     try? Auth.auth().signOut()
                 } label: {
                     Text("Sign Out")
                 }
             }
-            .transition(.slideIn)
+            .slideAnimation(reversed: reverseAnimation)
         } else {
             LoginView()
-                .transition(.slideOut)
+                .slideAnimation(reversed: reverseAnimation)
         }
     }
 }

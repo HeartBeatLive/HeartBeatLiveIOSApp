@@ -18,3 +18,9 @@ extension AnyTransition {
         removal: .move(edge: .trailing)
     )
 }
+
+extension View {
+    func slideAnimation(reversed: Bool = false) -> some View {
+        return transition(reversed ? .slideOut : .slideIn)
+    }
+}
