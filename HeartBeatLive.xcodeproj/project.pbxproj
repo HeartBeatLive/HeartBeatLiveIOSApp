@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		1AA325491C038ABCB33C72F8 /* Pods_HeartBeatLive_HeartBeatLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97CA998558490D9602327D5 /* Pods_HeartBeatLive_HeartBeatLiveUITests.framework */; };
 		44A1AE54F43BE9E6B0A5E73E /* Pods_HeartBeatLiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4684A1BFB4397599B47FBF /* Pods_HeartBeatLiveTests.framework */; };
+		47847D0A28C955A300129600 /* UpdateUserDisplayName.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */; };
 		47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */; };
 		47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C5D28C4C75E004AD987 /* Assets.xcassets */; };
 		47CE3C6128C4C75E004AD987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C6028C4C75E004AD987 /* Preview Assets.xcassets */; };
 		47CE3C7528C4C75F004AD987 /* HeartBeatLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */; };
 		47CE3C7728C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */; };
 		47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C8728C4C9F7004AD987 /* CustomColors.swift */; };
-		47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9028C4CD4E004AD987 /* ContentView.swift */; };
 		47CE3C9728C4D314004AD987 /* HeartRateAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3C9628C4D314004AD987 /* HeartRateAnimation.swift */; };
 		47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C9828C4D6F0004AD987 /* HeartRateAnimation.json */; };
 		47CE3C9C28C4DC40004AD987 /* CheckEmailReserved.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */; };
@@ -25,6 +25,14 @@
 		47CE3CA928C4EA4B004AD987 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3CA828C4EA4B004AD987 /* README.md */; };
 		47CE3CAC28C4EB0C004AD987 /* ConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */; };
 		47CE3CAF28C4EC60004AD987 /* ApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CAE28C4EC60004AD987 /* ApiClientTest.swift */; };
+		47CE3CB128C51292004AD987 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47CE3CB028C51292004AD987 /* GoogleService-Info.plist */; };
+		47CE3CB328C512B2004AD987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CB228C512B2004AD987 /* AppDelegate.swift */; };
+		47CE3CB528C5132E004AD987 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CB428C5132E004AD987 /* LoginView.swift */; };
+		47CE3CB728C55133004AD987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CB628C55133004AD987 /* ContentView.swift */; };
+		47CE3CB928C551B7004AD987 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE3CB828C551B7004AD987 /* Animations.swift */; };
+		47D4057E28C76C3900F96C8A /* GraphQLExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4057D28C76C3900F96C8A /* GraphQLExtensionTest.swift */; };
+		47F8D73C28C6238000776330 /* SendResetPasswordEmail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 47F8D73B28C6238000776330 /* SendResetPasswordEmail.graphql */; };
+		47F8D73E28C6276A00776330 /* GraphQLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8D73D28C6276A00776330 /* GraphQLExtension.swift */; };
 		AB1B50C65D4745589CF01CBD /* Pods_HeartBeatLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF433BFD1FD268D3DD3A2013 /* Pods_HeartBeatLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +57,8 @@
 		21B36427797905C480AB2537 /* Pods-HeartBeatLiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		23578360FBA27B978E40A3DF /* Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		324AA201F0B907174DB8D615 /* Pods-HeartBeatLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.debug.xcconfig"; sourceTree = "<group>"; };
+		4728DEB028FAAE1F0018E9BB /* HeartBeatLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeartBeatLive.entitlements; sourceTree = "<group>"; };
+		47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateUserDisplayName.graphql; sourceTree = "<group>"; };
 		47CE3C5628C4C75B004AD987 /* HeartBeatLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeatLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveApp.swift; sourceTree = "<group>"; };
 		47CE3C5D28C4C75E004AD987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +68,6 @@
 		47CE3C7428C4C75F004AD987 /* HeartBeatLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITests.swift; sourceTree = "<group>"; };
 		47CE3C7628C4C75F004AD987 /* HeartBeatLiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatLiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		47CE3C8728C4C9F7004AD987 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		47CE3C9028C4CD4E004AD987 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47CE3C9328C4D082004AD987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47CE3C9628C4D314004AD987 /* HeartRateAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAnimation.swift; sourceTree = "<group>"; };
 		47CE3C9828C4D6F0004AD987 /* HeartRateAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeartRateAnimation.json; sourceTree = "<group>"; };
@@ -71,6 +80,14 @@
 		47CE3CA828C4EA4B004AD987 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTest.swift; sourceTree = "<group>"; };
 		47CE3CAE28C4EC60004AD987 /* ApiClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTest.swift; sourceTree = "<group>"; };
+		47CE3CB028C51292004AD987 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47CE3CB228C512B2004AD987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		47CE3CB428C5132E004AD987 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		47CE3CB628C55133004AD987 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		47CE3CB828C551B7004AD987 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		47D4057D28C76C3900F96C8A /* GraphQLExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLExtensionTest.swift; sourceTree = "<group>"; };
+		47F8D73B28C6238000776330 /* SendResetPasswordEmail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SendResetPasswordEmail.graphql; sourceTree = "<group>"; };
+		47F8D73D28C6276A00776330 /* GraphQLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLExtension.swift; sourceTree = "<group>"; };
 		601148F32DB27D49C7B39867 /* Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive-HeartBeatLiveUITests/Pods-HeartBeatLive-HeartBeatLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8615BE3429C00E6BE9D01E53 /* Pods-HeartBeatLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLiveTests.debug.xcconfig"; path = "Target Support Files/Pods-HeartBeatLiveTests/Pods-HeartBeatLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B399354068AEA66D1A06055B /* Pods-HeartBeatLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartBeatLive.release.xcconfig"; path = "Target Support Files/Pods-HeartBeatLive/Pods-HeartBeatLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +152,9 @@
 		47CE3C5828C4C75B004AD987 /* HeartBeatLive */ = {
 			isa = PBXGroup;
 			children = (
+				4728DEB028FAAE1F0018E9BB /* HeartBeatLive.entitlements */,
 				47CE3C5928C4C75B004AD987 /* HeartBeatLiveApp.swift */,
+				47CE3CB228C512B2004AD987 /* AppDelegate.swift */,
 				47CE3C8F28C4CD16004AD987 /* View */,
 				47CE3C9D28C4DDA2004AD987 /* API */,
 				47CE3C8D28C4CCFD004AD987 /* Utils */,
@@ -143,6 +162,7 @@
 				47CE3C5F28C4C75E004AD987 /* Preview Content */,
 				47CE3C9328C4D082004AD987 /* Info.plist */,
 				47CE3CA028C4DFDA004AD987 /* API.swift */,
+				47CE3CB028C51292004AD987 /* GoogleService-Info.plist */,
 			);
 			path = HeartBeatLive;
 			sourceTree = "<group>";
@@ -178,6 +198,8 @@
 			children = (
 				47CE3C8728C4C9F7004AD987 /* CustomColors.swift */,
 				47CE3CA628C4E4A4004AD987 /* Config.swift */,
+				47CE3CB828C551B7004AD987 /* Animations.swift */,
+				47F8D73D28C6276A00776330 /* GraphQLExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -195,7 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				47CE3C9528C4D304004AD987 /* Common */,
-				47CE3C9028C4CD4E004AD987 /* ContentView.swift */,
+				47CE3CB428C5132E004AD987 /* LoginView.swift */,
+				47CE3CB628C55133004AD987 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +236,8 @@
 			children = (
 				47CE3C9E28C4DDB4004AD987 /* ApiClient.swift */,
 				47CE3C9B28C4DC40004AD987 /* CheckEmailReserved.graphql */,
+				47F8D73B28C6238000776330 /* SendResetPasswordEmail.graphql */,
+				47847D0928C955A300129600 /* UpdateUserDisplayName.graphql */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -221,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				47CE3CAB28C4EB0C004AD987 /* ConfigTest.swift */,
+				47D4057D28C76C3900F96C8A /* GraphQLExtensionTest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,6 +398,9 @@
 				47CE3CA928C4EA4B004AD987 /* README.md in Resources */,
 				47CE3C5E28C4C75E004AD987 /* Assets.xcassets in Resources */,
 				47CE3C9928C4D6F0004AD987 /* HeartRateAnimation.json in Resources */,
+				47CE3CB128C51292004AD987 /* GoogleService-Info.plist in Resources */,
+				47847D0A28C955A300129600 /* UpdateUserDisplayName.graphql in Resources */,
+				47F8D73C28C6238000776330 /* SendResetPasswordEmail.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,10 +564,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CE3CB328C512B2004AD987 /* AppDelegate.swift in Sources */,
 				47CE3C8828C4C9F7004AD987 /* CustomColors.swift in Sources */,
+				47F8D73E28C6276A00776330 /* GraphQLExtension.swift in Sources */,
 				47CE3C5A28C4C75B004AD987 /* HeartBeatLiveApp.swift in Sources */,
-				47CE3C9128C4CD4E004AD987 /* ContentView.swift in Sources */,
+				47CE3CB528C5132E004AD987 /* LoginView.swift in Sources */,
 				47CE3CA728C4E4A4004AD987 /* Config.swift in Sources */,
+				47CE3CB928C551B7004AD987 /* Animations.swift in Sources */,
+				47CE3CB728C55133004AD987 /* ContentView.swift in Sources */,
 				47CE3C9728C4D314004AD987 /* HeartRateAnimation.swift in Sources */,
 				47CE3CA128C4DFDA004AD987 /* API.swift in Sources */,
 				47CE3C9F28C4DDB4004AD987 /* ApiClient.swift in Sources */,
@@ -549,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D4057E28C76C3900F96C8A /* GraphQLExtensionTest.swift in Sources */,
 				47CE3CAC28C4EB0C004AD987 /* ConfigTest.swift in Sources */,
 				47CE3CAF28C4EC60004AD987 /* ApiClientTest.swift in Sources */,
 			);
@@ -699,6 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeartBeatLive/HeartBeatLive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeartBeatLive/Preview Content\"";
@@ -711,6 +746,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -734,6 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeartBeatLive/HeartBeatLive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeartBeatLive/Preview Content\"";
@@ -746,6 +783,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

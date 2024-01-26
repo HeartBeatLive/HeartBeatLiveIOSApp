@@ -12,3 +12,4 @@
 
 SERVER_SCHEME = http
 SERVER_HOST = localhost:8080
+ASSOCIATED_DOMAIN = heartbeatlive.com

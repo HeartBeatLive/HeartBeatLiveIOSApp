@@ -6,33 +6,39 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
-    @State private var email = ""
-    @State private var resultMessage: String = ""
+    @State private var user = Auth.auth().currentUser
+    @State private var reverseAnimation = false
 
     var body: some View {
-        Form {
-            Section("Check if email is reserved") {
-                TextField("Email address", text: $email)
-                Text(resultMessage)
-                Button {
-                    ApiClient.shared.fetch(query: CheckEmailReservedQuery(email: email)) { result in
-                        switch result {
-                        case .success(let result):
-                            guard let emailReserved = result.data?.checkEmailReserved else {
-                                resultMessage = "An error happened while trying to check if email is reserved"
-                                return
-                            }
-                            resultMessage = emailReserved ? "Email is reserved" : "Email is not reserved"
-                        case .failure(let error):
-                            resultMessage = "An error happened: \(error.localizedDescription)"
-                        }
+        mainView
+            .onAppear {
+                Auth.auth().addStateDidChangeListener { _, user in
+                    reverseAnimation = user == nil
+                    withAnimation {
+                        self.user = user
                     }
-                } label: {
-                    Text("Check")
+                    reverseAnimation = false
                 }
             }
+    }
+
+    @ViewBuilder private var mainView: some View {
+        if let user = self.user {
+            VStack {
+                Text("Hello, \(user.uid)")
+                Button {
+                    try? Auth.auth().signOut()
+                } label: {
+                    Text("Sign Out")
+                }
+            }
+            .slideAnimation(reversed: reverseAnimation)
+        } else {
+            LoginView()
+                .slideAnimation(reversed: reverseAnimation)
         }
     }
 }

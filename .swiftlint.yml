@@ -1,3 +1,6 @@
 excluded:
   - ${PWD}/Pods
   - HeartBeatLive/API.swift
+
+disabled_rules: 
+   - trailing_whitespace

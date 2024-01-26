@@ -4,7 +4,8 @@ This app is written on Swift programming language and use SwiftUI framework.
 
 ## Configuration
 Before launching application, you need to configure it.
-Open `Config.release.xcconfig` file and edit configuration values.
+First, add `GoogleService-Info.plist` file to `./HeartBeatLive` folder. You may download this file from Firebase Console.
+Then open `Config.release.xcconfig` file and edit configuration values.
 
 | Property name   | Description     |
 | --------------- | --------------- |

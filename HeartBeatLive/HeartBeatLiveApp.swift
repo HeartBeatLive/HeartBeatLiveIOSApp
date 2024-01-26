@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct HeartBeatLiveApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
